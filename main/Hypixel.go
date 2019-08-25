@@ -8,11 +8,12 @@ import (
 
 func main() {
 
+	//general testing
 }
 
 func sendRequest(apiType string, apiKey string, uuid string) *http.Response {
 
-	apiUrl := "https://api.hypixel.net/" + apiKey + "?key=[#type]"
+	apiUrl := "https://api.hypixel.net/" + apiKey + "?key=[#type]&byUuid=[#uuid]"
 
 	if len(apiKey) > 36 {
 		fmt.Println("Your API key is invalid, please check it! (Exiting)")
@@ -23,6 +24,7 @@ func sendRequest(apiType string, apiKey string, uuid string) *http.Response {
 	case "player":
 		{
 			strings.Replace(apiKey, "[#type]", "player", 1)
+			strings.Replace(apiKey, "[#uuid]", uuid, 1)
 
 			resp, err := http.Get(apiUrl)
 
@@ -37,6 +39,7 @@ func sendRequest(apiType string, apiKey string, uuid string) *http.Response {
 	case "guild":
 		{
 			strings.Replace(apiKey, "[#type]", "guild", 1)
+			strings.Replace(apiKey, "[#uuid]", uuid, 1)
 
 			resp, err := http.Get(apiUrl)
 
@@ -52,6 +55,7 @@ func sendRequest(apiType string, apiKey string, uuid string) *http.Response {
 	case "keys":
 		{
 			strings.Replace(apiKey, "[#type]", "keys", 1)
+			strings.Replace(apiKey, "[#uuid]", uuid, 1)
 
 			resp, err := http.Get(apiUrl)
 
@@ -67,6 +71,7 @@ func sendRequest(apiType string, apiKey string, uuid string) *http.Response {
 	case "boosters":
 		{
 			strings.Replace(apiKey, "[#type]", "boosters", 1)
+			strings.Replace(apiKey, "[#uuid]", uuid, 1)
 
 			resp, err := http.Get(apiUrl)
 
@@ -82,6 +87,7 @@ func sendRequest(apiType string, apiKey string, uuid string) *http.Response {
 	case "friends":
 		{
 			strings.Replace(apiKey, "[#type]", "friends", 1)
+			strings.Replace(apiKey, "[#uuid]", uuid, 1)
 
 			resp, err := http.Get(apiUrl)
 
