@@ -16,7 +16,7 @@ func sendRequest(apiType string, apiKey string, uuid string) *http.Response {
 
 	if len(apiKey) > 36 {
 		fmt.Println("Your API key is invalid, please check it! (Exiting)")
-		return
+		return nil
 	}
 
 	switch apiType {
