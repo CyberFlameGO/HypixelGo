@@ -10,7 +10,7 @@ func main() {
 
 }
 
-func sendRequest(apiType string, apiKey string, uuid string) {
+func sendRequest(apiType string, apiKey string, uuid string) *http.Response {
 
 	apiUrl := "https://api.hypixel.net/" + apiKey + "?key=[#type]"
 
@@ -30,7 +30,7 @@ func sendRequest(apiType string, apiKey string, uuid string) {
 				fmt.Println("Could not sound API request, found error: ", err)
 			}
 
-			fmt.Println(resp)
+			return resp
 		}
 		break
 
@@ -44,7 +44,7 @@ func sendRequest(apiType string, apiKey string, uuid string) {
 				fmt.Println("Could not sound API request, found error: ", err)
 			}
 
-			fmt.Println(resp)
+			return resp
 		}
 
 		break
@@ -59,7 +59,7 @@ func sendRequest(apiType string, apiKey string, uuid string) {
 				fmt.Println("Could not sound API request, found error: ", err)
 			}
 
-			fmt.Println(resp)
+			return resp
 		}
 
 		break
@@ -74,7 +74,7 @@ func sendRequest(apiType string, apiKey string, uuid string) {
 				fmt.Println("Could not sound API request, found error: ", err)
 			}
 
-			fmt.Println(resp)
+			return resp
 		}
 
 		break
@@ -89,7 +89,7 @@ func sendRequest(apiType string, apiKey string, uuid string) {
 				fmt.Println("Could not sound API request, found error: ", err)
 			}
 
-			fmt.Println(resp)
+			return resp
 		}
 
 		break
