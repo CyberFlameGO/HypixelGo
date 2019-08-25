@@ -95,4 +95,6 @@ func sendRequest(apiType string, apiKey string, uuid string) *http.Response {
 		break
 
 	}
+
+	return nil
 }
