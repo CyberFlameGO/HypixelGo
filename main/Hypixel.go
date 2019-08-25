@@ -1,23 +1,52 @@
 package main
 
-import (
-	"fmt"
-	"io/ioutil"
-	"net/http"
-)
-
-const apiUrl string = "https://api.hypixel.net/"
+import "fmt"
 
 func main() {
 
-	resp, err := http.Get(apiUrl)
+}
 
-	if err != nil {
-		fmt.Errorf("Could not send request, got error: %s", err)
+func sendRequest(apiType string, apiKey string) {
+
+	if len(apiKey) > 36 {
+		fmt.Println("Your API key is invalid, please check it! (Exiting)")
+		return
 	}
 
-	defer resp.Body.Close()
-	body, err := ioutil.ReadAll(resp.Body)
+	switch apiType {
+	case "player":
+		{
 
-	fmt.Println(body)
+		}
+		break
+
+	case "guild":
+		{
+
+		}
+
+		break
+
+	case "keys":
+		{
+
+		}
+
+		break
+
+	case "boosters":
+		{
+
+		}
+
+		break
+
+	case "friends":
+		{
+
+		}
+
+		break
+
+	}
 }
