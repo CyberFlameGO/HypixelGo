@@ -34,7 +34,6 @@ func sendRequest(apiType string, apiKey string, uuid string) *http.Response {
 
 			return resp
 		}
-		break
 
 	case "guild":
 		{
@@ -50,8 +49,6 @@ func sendRequest(apiType string, apiKey string, uuid string) *http.Response {
 			return resp
 		}
 
-		break
-
 	case "keys":
 		{
 			strings.Replace(apiKey, "[#type]", "keys", 1)
@@ -65,8 +62,6 @@ func sendRequest(apiType string, apiKey string, uuid string) *http.Response {
 
 			return resp
 		}
-
-		break
 
 	case "boosters":
 		{
@@ -82,8 +77,6 @@ func sendRequest(apiType string, apiKey string, uuid string) *http.Response {
 			return resp
 		}
 
-		break
-
 	case "friends":
 		{
 			strings.Replace(apiKey, "[#type]", "friends", 1)
@@ -97,8 +90,6 @@ func sendRequest(apiType string, apiKey string, uuid string) *http.Response {
 
 			return resp
 		}
-
-		break
 
 	}
 
