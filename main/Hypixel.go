@@ -9,6 +9,8 @@ import (
 func main() {
 
 	//general testing
+	test := sendRequest("player", "", "43db704e10b140b3a38dce059de35a59")
+	fmt.Println(test.Body)
 }
 
 func sendRequest(apiType string, apiKey string, uuid string) *http.Response {
